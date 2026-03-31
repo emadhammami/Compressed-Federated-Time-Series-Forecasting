@@ -174,3 +174,23 @@ print("\nFinal test MAE:", test_mae)
 # Save results for paper plot
 pd.DataFrame(results).to_csv("federated_lstm_compression_stats.csv", index=False)
 print("Saved uplink stats.")
+
+# ───────── Reproduced Results ───────── #
+# Dataset : tulipa762/electricity_load_diagrams
+# Clients : 3  |  Rounds : 100  |  Local epochs : 2  |  Batch : 64
+# Compressor : DeltaCompressor(kf=1e-3)
+#
+# Round   1 | upload 0.3 KB | val MAE 3093.56
+# Round  10 | upload 0.3 KB | val MAE 3093.27
+# Round  20 | upload 0.3 KB | val MAE 3088.01
+# Round  30 | upload 0.3 KB | val MAE 3084.65
+# Round  40 | upload 0.3 KB | val MAE 3085.29
+# Round  50 | upload 0.3 KB | val MAE 3091.05
+# Round  60 | upload 0.3 KB | val MAE 3085.05
+# Round  70 | upload 0.3 KB | val MAE 3085.16
+# Round  80 | upload 0.3 KB | val MAE 3085.45
+# Round  90 | upload 0.3 KB | val MAE 3092.67
+# Round 100 | upload 0.3 KB | val MAE 3083.04
+#
+# Final test MAE : 639.35
+# ─────────────────────────────────────── #
